@@ -79,7 +79,7 @@ if(state == UI.HUD) || (state == UI.PAUSE)
 			_c	= COL.WHITE;
 			_s	= 4;
 			var _esp = (cell * 2 * scale) - 6;
-			draw_text_transformed_color(mix, _esp, "You are sleeping... TIME SPEEDS UP !", _s, _s, 0, _c, _c, _c, _c, 1);
+			draw_text_transformed_color(mix, rage_text_y, "You are sleeping... TIME SPEEDS UP !", _s, _s, 0, _c, _c, _c, _c, 1);
 		}
 		
 	#endregion
@@ -336,8 +336,8 @@ if(state == UI.HUD)
 		//	var _text = "Dehydration has driven you CRAZY !!";
 		//	var _text = "Dehydration made you lose control !";
 		//	var _text = "Thirst has driven you mad !";
-		//	var _text = "You've become ENRAGED and UNSTOPPABLE !!!";
-			var _text = "Thirst has made you UNCONTROLLABLE !!!";
+		//	var _text = "You've become UNCONTROLLABLE and UNSTOPPABLE !!!";
+			var _text = "Dehydration has made you UNCONTROLLABLE !!!";
 		draw_text_transformed(rage_text_x, rage_text_y, _text, _s, _s, 0);	_i++;
 	
 		}

@@ -66,6 +66,12 @@
 		}	
 	}
 
+	function player_and_npc_can_evaporate()
+	{
+		with(obj_player)		{ can_evaporate = true; }
+		with(obj_pnj_droplet)	{ can_evaporate = true; }
+	}
+	
 #endregion
 
 
@@ -267,7 +273,7 @@ function player_effects_evaporation(_ybuff = -16, _rand = 8)
 		{
 			if(can_accelerate_time == true)
 			{
-				show_debug_message("time_speed_fast() : t = " + string(time_increment));
+			//	show_debug_message("time_speed_fast() : t = " + string(time_increment));
 			//	event_user(7);	
 			//	time_increment		= time_increment_max;	//ACCELERATION
 				can_accelerate_time = false;
@@ -287,7 +293,7 @@ function player_effects_evaporation(_ybuff = -16, _rand = 8)
 		{
 		//	if(can_accelerate_time == false)
 			{
-				show_debug_message("time_speed_normal() : t = " + string(time_increment));
+			//	show_debug_message("time_speed_normal() : t = " + string(time_increment));
 			//	event_user(7);	
 			//	time_increment		= time_increment_init;	//RETOUR A LA NORMALE
 				can_accelerate_time = true;

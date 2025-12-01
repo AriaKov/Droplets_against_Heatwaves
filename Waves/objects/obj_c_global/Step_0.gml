@@ -9,11 +9,7 @@ if(1 == 1)
 //	if(keyboard_check_pressed(vk_numpad2))	{ if(room_exists(room_previous(room)) == true){ room_goto_previous(); }}
 
 //	if(keyboard_check_pressed(ord("G")))	{ with(obj_flore_parent){ event_perform(ev_alarm, 0); }}
-	if(mouse_check_button_pressed(mb_right))
-	{ 
-		//PARTICULE
-	//	instance_create_layer(mouse_x, mouse_y, "Instances", obj_fire_small);		
-	}
+
 	if(keyboard_check_pressed(ord("F")))	{ 
 //		if(instance_exists(obj_flore_parent) == true)
 		{ 
@@ -74,9 +70,14 @@ if(1 == 1)
 #region ARTIFICIAL PLANT GROWTH
 
 	if(can_artificially_make_plants_grow == true)	//DEBUG : faire grandir les plantes "à la main" en début de room
+	|| (global.time_acceleration == true)
 	{
-		
-		if(current_time mod 2 == 0)	//Toutes les x frames seulement
+			var _div = 2;
+			if(global.time_acceleration == true)
+			{
+				_div = 6;
+			}
+		if(current_time mod _div == 0)	//Toutes les x frames seulement
 		{
 			with(obj_flore_parent){ event_perform(ev_alarm, 0); }
 			artificial_plants_growing_counter++;
